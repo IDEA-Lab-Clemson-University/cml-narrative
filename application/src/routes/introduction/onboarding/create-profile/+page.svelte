@@ -67,7 +67,7 @@
 
 	onMount(() => {
 		mounted = true;
-		profileData = $agentData;
+		// profileData = $agentData;
 
 		console.log('pd: ', profileData);
 	});
@@ -94,7 +94,9 @@
 
 	const handleSubmit = async () => {
 		try {
-			await DataService.Data.setProfileData(profileData);
+			// await DataService.Data.setProfileData(profileData);
+			alert('We should create profile here, but the current DB structure does not allow.');
+			// await DataService.Auth.signUp(profileData);
 			goto('/introduction/onboarding/create-profile/confirmation');
 		} catch (error) {
 			console.error(error);
@@ -134,7 +136,7 @@
 		</button>
 	</div>
 	{#if page == 3 || page == 4 || page == 5}
-		<div class="absolute inset-0 z-10 mt-auto mb-9 flex  h-fit items-end justify-center  shadow-md">
+		<div class="absolute inset-0 z-10 mb-9 mt-auto flex  h-fit items-end justify-center  shadow-md">
 			<ClickToViewProfileBanner />
 		</div>
 	{/if}
